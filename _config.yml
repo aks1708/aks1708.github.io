@@ -1,3 +1,6 @@
-theme: jekyll-theme-minimal
+# Site settings
 title: Anuj Singhal's Blog
 description: Brain Dump on AI but look out for other interesting stuff too!
+baseurl: ""
+url: "https://aks1708.github.io"
+ 

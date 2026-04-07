@@ -1,0 +1,35 @@
+---
+layout: default
+title: Home
+---
+
+<div class="welcome-section fade-in">
+    <h1 class="section-title">Latest <span class="gradient-text">Posts</span></h1>
+</div>
+
+<div class="posts-grid fade-in">
+    {% if site.posts.size > 0 %}
+    {% for post in site.posts %}
+    <article class="post-card">
+        <div class="post-card-content">
+            <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+            <h2 class="post-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            <p class="post-excerpt">
+                {% if post.summary %}
+                {{ post.summary }}
+                {% else %}
+                {{ post.excerpt | strip_html | truncatewords: 20 }}
+                {% endif %}
+            </p>
+        </div>
+    </article>
+    {% endfor %}
+    {% else %}
+    <div
+        style="grid-column: 1 / -1; padding: 3rem; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 1.25rem; text-align: center; color: var(--text-muted); backdrop-filter: blur(8px);">
+        <p style="font-size: 1.2rem; margin: 0;">Uh oh! There are no posts yet... Stay tuned! 😉</p>
+    </div>
+    {% endif %}
+</div>
