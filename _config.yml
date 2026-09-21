@@ -1,0 +1,17 @@
+title: Anulog
+author: Anuj Singhal
+email:
+description: "My personal brain dump"
+baseurl: ""
+url: "http://aks1708.github.io"
+twitter_username:
+github_username: aks1708
+
+theme: minima
+plugins:
+   - jekyll-feed
+
+sass:
+  quiet_deps: true
+  silence_deprecations:
+    - import

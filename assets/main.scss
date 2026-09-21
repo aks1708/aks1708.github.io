@@ -1,0 +1,90 @@
+---
+---
+
+@use "sass:color";
+
+// Dark theme overrides for the minima theme.
+// These must come before the import so minima's !default values are skipped
+// and its derived colors (lighten/darken) are computed from these.
+$background-color: #000;
+$text-color: #fff;
+$brand-color: #8ab4f8;
+$grey-color: #aaa;
+
+@import "minima";
+
+// Site title (blog name): always white, regardless of link state.
+// The github username in the footer, and post titles: pink.
+$pink: #ff6eb5;
+
+.site-title,
+.site-title:visited {
+  color: #fff;
+}
+
+.social-media-list .username,
+.social-media-list a:visited .username {
+  color: $pink;
+}
+
+.social-media-list a:hover .username {
+  color: color.adjust($pink, $lightness: 15%);
+}
+
+.post-link,
+.post-link:visited,
+.post-title,
+.post-title:visited {
+  color: $pink;
+}
+
+.post-link:hover,
+.post-title:hover {
+  color: color.adjust($pink, $lightness: 15%);
+}
+
+// Code blocks: the theme hardcodes a light background for code and
+// syntax highlighting, so patch them here to stay readable on black.
+pre,
+code {
+  background-color: #0f0f0f;
+}
+
+.highlight,
+.highlight pre,
+.highlight code,
+.highlight table,
+.highlight td,
+.highlight th,
+.highlight .hll,
+.highlight .gp {
+  background-color: #0f0f0f !important;
+}
+
+.highlight,
+.highlight span,
+.highlight td,
+.highlight th,
+.highlight code {
+  color: #d8d8d8 !important;
+}
+
+// Tables: the theme lightens background colors for zebra striping,
+// which would leave near-white cells on the black page.
+table {
+  color: inherit;
+  border-color: #444;
+
+  tr:nth-child(even) {
+    background-color: #0f0f0f;
+  }
+
+  th,
+  td {
+    border-color: #444;
+  }
+
+  th {
+    background-color: #0f0f0f;
+  }
+}
