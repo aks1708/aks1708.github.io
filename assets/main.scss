@@ -1,7 +1,8 @@
 ---
 ---
 
-@use "sass:color";
+// Note: GitHub Pages builds with Ruby Sass, which does not support the
+// sass:color module — use the legacy lighten() function instead.
 
 // Dark theme overrides for the minima theme.
 // These must come before the import so minima's !default values are skipped
@@ -28,7 +29,7 @@ $pink: #ff6eb5;
 }
 
 .social-media-list a:hover .username {
-  color: color.adjust($pink, $lightness: 15%);
+  color: lighten($pink, 15%);
 }
 
 .post-link,
@@ -40,7 +41,7 @@ $pink: #ff6eb5;
 
 .post-link:hover,
 .post-title:hover {
-  color: color.adjust($pink, $lightness: 15%);
+  color: lighten($pink, 15%);
 }
 
 // Code blocks: the theme hardcodes a light background for code and
